@@ -1,5 +1,5 @@
 import React from "react";
-import "./App.css";
+import { GlobalStyles } from './global.styles';
 
 import { Switch, Route, Redirect } from "react-router-dom";
 
@@ -15,6 +15,7 @@ import { setCurrentUser } from "./redux/user/userActions";
 
 import { createStructuredSelector } from "reselect";
 import { selectCurrentUser } from "./redux/user/userSelectors";
+import GlobalStyle from './global.styles';
 
 class App extends React.Component {
   constructor(props) {
@@ -50,6 +51,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
+      <GlobalStyle />
         <Header />
         <Switch>
           <Route exact path="/" component={HomePage} />
